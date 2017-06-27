@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    animation: back 12s infinite ;
+}
+
+section#score {
+  width: 100%;
+}
+
+#board {
+  width: 540px;
+  height: 540px;
+  margin: 1em auto;
+    background-image: url('../images/tree.png');
+    background-size: cover;
+
+}
+
+#board  > div {
+  animation: bord 10s infinite ;
+  float: left;
+  width: 54px;
+  height: 54px;
+
+}
+
+
+section#score div {
+  width: 10em;
+  height: 3em;
+  text-align: center;
+  padding: 0.5em;
+  background-color: rgba(211,211,211, 0.75);
+  border: 1px solid lightgray;
+  border-radius: 1px;
+  box-shadow: 1px 1px 5px 1px lightgray;
+  margin: 1em auto;
+}
+
+
+
+
+.furry {
+  background-image: url('../images/tom.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+.coin {
+  background-image: url('../images/jerry.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.enemy{
+  background-image: url('../images/buldog.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section#over {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  padding: 10px;
+  background-position: center;
+  background-color: rgba(255, 25, 0, 0.5);
+  /*background-image: url('../images/bravo.png');*/
+  background-repeat: no-repeat;
+  animation: tlo 3s infinite
+}
+  section#over:hover{
+    animation-play-state: paused;
+  }
+
+
+a{
+  text-decoration: none;
+  color: rgb(155, 30, 70);
+}
+a:hover{
+  color:yellow;
+}
+section#over pre {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bolder;
+  color: brown;
+}
+
+.invisible {
+  display: none;
+}
+.onlyForFlex{
+  display: flex;
+  margin-top: 200px;
+}
+.animat{
+
+  width: 300px;
+  text-align: center;
+  margin-left: 200px;
+
+}
+
+@keyframes ruch {
+  0% {border-radius: 50%;}
+  20%{color: rgba(25, 115, 100, 0.8);
+  border-radius: 30%;}
+  50%{transform: skew(-15deg, 190deg);
+transform: rotate(40deg);}
+  70%{transform: scale(2);
+  color: rgba(255, 25, 0, 0.8);
+  border-radius: 50%;}
+  100% {width:200px;
+  border-radius: 30%;}
+}
+@keyframes bord {
+  0%{
+    border: 1px solid lightgreen;
+  }
+  20%{
+    border: 0.5px solid lightblue;
+  }
+  50%{
+    border: 1px solid green;
+  }
+  70%{
+    border: 0.5px solid blue;
+  }
+  100%{
+    border: 1px solid lightblue;
+  }
+}
+@keyframes back {
+  0%{
+    background-color:  lightgreen ;
+  }
+  20%{
+      background-color:  rgba(0,211,211, 0.75);
+  }
+30%{
+      background-color:  lightblue;
+  }
+  50%{
+      background-color:  lightgreen;
+  }
+  70%{
+      background-color:  rgba(70,211,211, 0.75);
+  }
+  85%{
+      background-color:  lightblue;
+  }
+  100%{
+      background-color:  green;
+  }
+}
+@keyframes tlo {
+  0%{background-image: url('../images/bravo.png');}
+  100%{
+    background-image: url('../images/bravo.png');
+    transform: scale(1.5);
+
+  }
+}
